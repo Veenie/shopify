@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+
+import Toggle from "./Toggle";
+
 
 function App() {
+
+  const [photoData, setPhotoData] = useState(null);
+
+  useEffect(() => {
+    fetchPhoto();
+
+    async function fetchPhoto() {
+      const res = await fetch(
+        `https://api.nasa.gov/planetary/apod?api_key=8EnwXPGooPzc8KPRAVObz3um51ufzyMVHgcToLS6`
+      );
+      const data = await res.json();
+      setPhotoData(data);
+    }
+  }, []);
+
+  if (!photoData) return <div />;
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="nasa-photo">
+        <img
+          src={photoData.url}
+          alt={photoData.title}
+          className="photo"
+        />
+      <div>
+        <h1>{photoData.title}</h1>
+        <p className="date">{photoData.date}</p>
+        <Toggle />
+      </div>
     </div>
   );
 }
