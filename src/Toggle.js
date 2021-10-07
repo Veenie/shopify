@@ -5,7 +5,7 @@ class Toggle extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { toggle: true  }
+    this.state = { toggle: true }
   }
 
   handleClick() {
