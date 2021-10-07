@@ -27,6 +27,8 @@ function App() {
         <img
           src={photoData.url}
           alt={photoData.title}
+          width="400" 
+          height="500"
 
           className="photo"
         />
