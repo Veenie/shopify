@@ -27,11 +27,12 @@ function App() {
         <img
           src={photoData.url}
           alt={photoData.title}
+
           className="photo"
         />
       <div>
-        <h1>{photoData.title}</h1>
-        <p className="date">{photoData.date}</p>
+        <h3>{photoData.title}</h3>
+        {/* <p className="date">{photoData.date}</p> */}
         <Toggle />
       </div>
     </div>
