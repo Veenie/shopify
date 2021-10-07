@@ -1,4 +1,5 @@
 import React from 'react';
+import './Toggle.css';
 
 class Toggle extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Toggle extends React.Component {
 
   render() {
     return (
-      <button onClick={()=> this.handleClick()}>{this.state.toggle ? "♡" : "♥"}</button>
+      <button class="button big-btn" onClick={()=> this.handleClick()}>{this.state.toggle ? "♡" : "♥"}</button>
     );
   }
 }
