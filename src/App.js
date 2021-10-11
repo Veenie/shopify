@@ -12,7 +12,7 @@ function App() {
 
     async function fetchPhoto() {
       const res = await fetch(
-        `https://api.nasa.gov/planetary/apod?api_key=8EnwXPGooPzc8KPRAVObz3um51ufzyMVHgcToLS6`
+        `https://api.nasa.gov/planetary/apod?api_key=8EnwXPGooPzc8KPRAVObz3um51ufzyMVHgcToLS6&count=5`
       );
       const data = await res.json();
       setPhotoData(data);
@@ -23,20 +23,26 @@ function App() {
 
 
   return (
-    <div className="nasa-photo">
-        <img
-          src={photoData.url}
-          alt={photoData.title}
-          width="400" 
-          height="500"
-          className="photo"
-        />
-      <div>
-        <h3>{photoData.title}</h3>
-        {/* <p className="date">{photoData.date}</p> */}
-        <Toggle />
-      </div>
+    <div>
+      {photoData.map(p =>  
+      <div className="nasa-photo">
+      <img
+      src={p.url}
+      alt={p.title}
+      width="400" 
+      height="500"
+      className="photo"
+    />
+  <div>
+    <h3>{p.title}</h3>
+    {/* <p className="date">{photoData.date}</p> */}
+    <Toggle />
+  </div>
+</div>)}
     </div>
+    
+
+       
   );
 }
 
