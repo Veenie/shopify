@@ -23,7 +23,7 @@ function App() {
 
 
   return (
-    <div>
+    <div >
       {photoData.map(p =>  
       <div className="nasa-photo">
       <img
@@ -31,12 +31,9 @@ function App() {
       alt={p.title}
       width="400" 
       height="500"
-      className="photo"
     />
-  <div>
     <h3>{p.title}</h3>
     <Toggle />
-  </div>
     </div>)}
     </div>
     

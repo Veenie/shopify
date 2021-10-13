@@ -5,11 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(2, 24, 56);
-  color:darkgrey;
+  background-color: black;
+  color:rgb(245, 244, 244);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.nasa-photo{
+  margin-left: 30%;
+  margin-right: 30%;
+  /* border: 3px solid blanchedalmond;
+  left: 50%; */
 }
