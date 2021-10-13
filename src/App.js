@@ -35,10 +35,9 @@ function App() {
     />
   <div>
     <h3>{p.title}</h3>
-    {/* <p className="date">{photoData.date}</p> */}
     <Toggle />
   </div>
-</div>)}
+    </div>)}
     </div>
     
 
